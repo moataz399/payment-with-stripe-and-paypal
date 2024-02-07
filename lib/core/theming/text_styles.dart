@@ -4,18 +4,26 @@ import 'colors.dart';
 import 'font_weight_helper.dart';
 
 class TextStyles {
-  static TextStyle font22BlackRegular= TextStyle(
+  static TextStyle font22BlackRegular = TextStyle(
     fontSize: 22,
-    fontWeight: FontWeightHelper.regular,
+    fontWeight: FontWeightHelper.medium,
     color: Colors.black,
   );
-
+  static TextStyle font22BlackSemiBold = TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeightHelper.semiBold,
+    color: Colors.black,
+  );
   static TextStyle font11greyRegular = TextStyle(
     fontSize: 11,
     fontWeight: FontWeightHelper.regular,
     color: Colors.grey,
   );
-
+  static TextStyle font14WhiteMedium = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeightHelper.medium,
+    color: Colors.white,
+  );
   static TextStyle font12BlueRegular = TextStyle(
     fontSize: 12,
     fontWeight: FontWeightHelper.regular,
@@ -33,10 +41,20 @@ class TextStyles {
     fontWeight: FontWeightHelper.bold,
     color: Colors.black,
   );
-  static TextStyle font18BlackSemiBold = TextStyle(
+  static TextStyle font18BlackMedium = TextStyle(
     fontSize: 18,
     fontWeight: FontWeightHelper.medium,
     color: Colors.black,
+  );
+  static TextStyle font18BlackRegular = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeightHelper.regular,
+    color: Colors.black,
+  );
+  static TextStyle font18GreySemiBold = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeightHelper.bold,
+    color: Colors.grey,
   );
   static TextStyle font32BlueBold = TextStyle(
     fontSize: 32,
@@ -117,6 +135,11 @@ class TextStyles {
     fontSize: 24,
     fontWeight: FontWeightHelper.bold,
     color: AppColors.mainBlue,
+  );
+  static TextStyle font24GreenBold = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeightHelper.bold,
+    color: Colors.green,
   );
 
   static TextStyle font15DarkBlueMedium = TextStyle(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:payment/features/checkout/ui/views/payment_details_view.dart';
 
 import 'features/checkout/ui/views/my_cart_view.dart';
+import 'features/checkout/ui/views/thank_you_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: PaymentDetailsView(),
+      home: MyCartView(),
     );
   }
 }
