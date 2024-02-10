@@ -1,8 +1,3 @@
-
-
-
-
-
 import 'package:flutter/material.dart';
 
 import '../theming/colors.dart';
@@ -17,8 +12,11 @@ class AppTextButton extends StatelessWidget {
   final String buttonText;
   final TextStyle textStyle;
   final VoidCallback onPressed;
+  final bool isloading;
+
   const AppTextButton({
     super.key,
+    this.isloading = false,
     this.borderRadius,
     this.backgroundColor,
     this.horizontalPadding,
@@ -53,10 +51,12 @@ class AppTextButton extends StatelessWidget {
         ),
       ),
       onPressed: onPressed,
-      child: Text(
-        buttonText,
-        style: textStyle,
-      ),
+      child: isloading
+          ? CircularProgressIndicator()
+          : Text(
+              buttonText,
+              style: textStyle,
+            ),
     );
   }
 }

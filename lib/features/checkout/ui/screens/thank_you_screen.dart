@@ -5,8 +5,8 @@ import 'package:payment/core/theming/text_styles.dart';
 import '../widgets/custom_dashed_line.dart';
 import '../widgets/payment_info_item.dart';
 
-class ThankYouView extends StatelessWidget {
-  const ThankYouView({super.key});
+class ThankYouScreen extends StatelessWidget {
+  const ThankYouScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
