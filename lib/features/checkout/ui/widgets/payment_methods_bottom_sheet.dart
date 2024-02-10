@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:payment/core/utils/api_keys.dart';
 import 'package:payment/features/checkout/ui/widgets/payment_methods_list_view.dart';
 
 import '../../../../core/theming/text_styles.dart';
@@ -37,8 +38,10 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
               textStyle: TextStyles.font22BlackRegular,
               onPressed: () {
                 cubit.makePayment(
-                    paymentIntentInputModel: PaymentIntentInputModel(
-                        amount: "100", currency: "USD"));
+                    paymentIntentInputModel: PaymentIntentRequestModel(
+                        amount: "100",
+                        currency: "USD",
+                        customerId: ApiKeys.stripeCustomerId));
               },
             )
           ],

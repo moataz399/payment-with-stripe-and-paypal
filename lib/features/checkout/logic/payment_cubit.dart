@@ -14,7 +14,7 @@ class PaymentCubit extends Cubit<PaymentState> {
   final PaymentRepo paymentRepo = PaymentRepo();
   static PaymentCubit get(context) => BlocProvider.of(context);
   Future makePayment(
-      {required PaymentIntentInputModel paymentIntentInputModel}) async {
+      {required PaymentIntentRequestModel paymentIntentInputModel}) async {
     emit(PaymentLoadingState());
     var data = await paymentRepo.makePayment(
         paymentIntentInputModel: paymentIntentInputModel);
