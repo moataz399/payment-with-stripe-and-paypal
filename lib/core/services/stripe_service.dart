@@ -12,15 +12,16 @@ class StripeService {
 
 //1 paymentIntentObject  create payment intent(amount, currency,customerId)
 //2 secretKey createEphemeralKey(customerId)
-//3 init paymentSheet (merchantDisplayName, intentClientSystem, ephemeralKeySecret)
+//3 initPaymentSheet (merchantDisplayName, intentClientSecretKey, ephemeralKeySecret)
 //4 display payment sheet
+// u should create stripe customer when u register to the app
 
   final ApiService apiService = ApiService();
 
   Future<PaymentIntentResponseModel> createPaymentIntent(
-      PaymentIntentRequestModel paymentIntentInputModel) async {
+      PaymentIntentRequestModel paymentIntentRequestModel) async {
     var response = await apiService.post(
-        body: paymentIntentInputModel.toJson(),
+        body: paymentIntentRequestModel.toJson(),
         url: "https://api.stripe.com/v1/payment_intents",
         token: ApiKeys.secretKey);
 
