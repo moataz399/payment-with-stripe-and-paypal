@@ -1,35 +1,35 @@
 class ItemListModel {
-  List<Items>? items;
+  List<OrderItemModel>? orders;
 
-  ItemListModel({this.items});
+  ItemListModel({this.orders});
 
   ItemListModel.fromJson(Map<String, dynamic> json) {
     if (json['items'] != null) {
-      items = <Items>[];
+      orders = <OrderItemModel>[];
       json['items'].forEach((v) {
-        items!.add(Items.fromJson(v));
+        orders!.add(OrderItemModel.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = Map<String, dynamic>();
-    if (items != null) {
-      data['items'] = items!.map((v) => v.toJson()).toList();
+    if (orders != null) {
+      data['items'] = orders!.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
-class Items {
+class OrderItemModel {
   String? name;
   int? quantity;
   String? price;
   String? currency;
 
-  Items({this.name, this.quantity, this.price, this.currency});
+  OrderItemModel({this.name, this.quantity, this.price, this.currency});
 
-  Items.fromJson(Map<String, dynamic> json) {
+  OrderItemModel.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     quantity = json['quantity'];
     price = json['price'];

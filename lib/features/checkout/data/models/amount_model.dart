@@ -1,17 +1,15 @@
-
 class AmountModel {
-  String? total;
-  String? currency;
-  Details? details;
+  final String total;
+  final String currency;
+  final Details details;
 
-  AmountModel({this.total, this.currency, this.details});
+  AmountModel(
+      {required this.total, required this.currency, required this.details});
 
-  AmountModel.fromJson(Map<String, dynamic> json) {
-    total = json['total'];
-    currency = json['currency'];
-    details =
-    json['details'] != null ? new Details.fromJson(json['details']) : null;
-  }
+  factory AmountModel.fromJson(Map<String, dynamic> json) => AmountModel(
+      total: json["total"] as String,
+      currency: json["currency"] as String,
+      details: Details.fromJson(json["details"] as Map<String, dynamic>));
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
